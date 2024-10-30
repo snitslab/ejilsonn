@@ -1,13 +1,11 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+import Layout from './pages/Layout';
 
 function App() {
   return (
     <div className="App">
-      <button>Click me</button>
-      <button>Click me</button>
-      <button>Delete me</button>
-      <button>Click me</button>
+      <Layout/> 
     </div>
   );
 }
