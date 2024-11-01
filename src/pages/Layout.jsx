@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 function Layout(){
@@ -5,7 +6,7 @@ function Layout(){
         <div>
             <Header/>
             <div>Content</div>
-            <div>Footer</div>
+            <Footer/>
         </div>
     )
 }

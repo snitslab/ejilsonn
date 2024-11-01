@@ -11,39 +11,45 @@ import MenuIcon from '@mui/icons-material/Menu';
 //import { BoltRounded } from '@mui/icons-material';
 import PersonIcon from '@mui/icons-material/Person';
 //import { findByLabelText } from '@testing-library/react';
+import { Button } from '@mui/material';
 
 
 export default function Header() {
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <AppBar position="static">
-                <Toolbar>
+        <Box sx={{ flexGrow: 1 }}>
+            <AppBar position="static" color="transparent">
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
 
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-
+                        sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
                         SNITS 3.0
                     </Typography>
 
-                    <Box>
-                        <button color='Home'>Home</button>
-                        <button color='inherit'>SOC2 Type II</button>
-                        <button color='inherit'>Policies</button>
+                    <Box sx={{ display: 'flex', gap: 2 }}>
+                        <Button sx={{ color: 'gray', fontWeight: 'bold' }}>Home</Button>
+                        <Button sx={{ color: 'gray', fontWeight: 'bold' }}>SOC2 Type II</Button>
+                        <Button sx={{ color: 'gray', fontWeight: 'bold' }}>Policies</Button>
                     </Box>
 
-                    <Box>
+                    <Box sx={{ display: 'flex', gap: 1 }}>
                         <IconButton
                             size="large"
-                            edge="start"
+                            edge="end"
                             color="inherit"
                             aria-label="open drawer"
-                            sx={{ mr: 2 }}
                         >
                             <MenuIcon />
+                        </IconButton>
+                        <IconButton
+                            size="large"
+                            edge="end"
+                            color="inherit"
+                            aria-label="user account"
+                        >
                             <PersonIcon />
                         </IconButton>
                     </Box>
