@@ -27,7 +27,7 @@ export default function Header() {
                         component="div"
                         sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
-                        SNITS 3.0
+                        App 3.0
                     </Typography>
 
                     <Box sx={{ display: 'flex', gap: 2 }}>
@@ -35,7 +35,7 @@ export default function Header() {
                         <Button sx={{ color: 'gray', fontWeight: 'bold' }}>Home</Button>
                         </Link>
                         <Link to="/soc">
-                        <Button sx={{ color: 'gray', fontWeight: 'bold' }}>SOC2 Type II</Button>
+                        <Button sx={{ color: 'gray', fontWeight: 'bold' }}>SOC</Button>
                         </Link>
                         <Link to="/policy">
                         <Button sx={{ color: 'gray', fontWeight: 'bold' }}>Policies</Button>
