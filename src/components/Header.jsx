@@ -12,6 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import PersonIcon from '@mui/icons-material/Person';
 //import { findByLabelText } from '@testing-library/react';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 export default function Header() {
@@ -30,9 +31,15 @@ export default function Header() {
                     </Typography>
 
                     <Box sx={{ display: 'flex', gap: 2 }}>
+                        <Link to="/home">
                         <Button sx={{ color: 'gray', fontWeight: 'bold' }}>Home</Button>
+                        </Link>
+                        <Link to="/soc">
                         <Button sx={{ color: 'gray', fontWeight: 'bold' }}>SOC2 Type II</Button>
+                        </Link>
+                        <Link to="/policy">
                         <Button sx={{ color: 'gray', fontWeight: 'bold' }}>Policies</Button>
+                        </Link>
                     </Box>
 
                     <Box sx={{ display: 'flex', gap: 1 }}>
