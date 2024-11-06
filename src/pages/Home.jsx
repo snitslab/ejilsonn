@@ -1,43 +1,51 @@
+// home.jsx
 import React from 'react';
-import { Box, Typography } from '@mui/material';
-import { keyframes } from '@emotion/react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
+import dispmenshop from '../assets/Shop.png'
 
-const blinkBackground = keyframes`
-  0% { background-color: #ff6666; }
-  25% { background-color: #66ff66; }
-  50% { background-color: #6666ff; }
-  75% { background-color: #ffff66; }
-  100% { background-color: #ff6666; }
-`;
+const Home = () => {
+    return (
+        <Box
+            sx={{
+                width: 300,
+                height: 300,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1px solid #ccc',
+                borderRadius: '8px',
+                backgroundColor: '#f5f5f5',
+                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+                padding: 2,
+            }}
+        >
+            <Typography variant="h6" component="div" gutterBottom>
+                Mens Collections
+            </Typography>
+            <Box                
+                sx={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: '58px',
+                }}>
+                <img src={dispmenshop} alt='Its Updating'></img>    
+                </Box>
+            {/* /> */}
+            <Button
+                component={Link}
+                to="/home/ShoppingCategories" // Replace with the actual product page route
+                variant="contained"
+                color="primary"
+                sx={{ mt: 2 }}
+            >
+                Shop Now
+            </Button>
+        </Box>
+    );
+};
 
-const scrollText = keyframes`
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-`;
-
-export default function Home() {
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        overflow: 'hidden',
-        animation: `${blinkBackground} 2s infinite`,
-      }}
-    >
-      <Typography
-        variant="h4"
-        sx={{
-          whiteSpace: 'nowrap',
-          fontWeight: 'bold',
-          color: 'white',
-          animation: `${scrollText} 5s linear infinite`,
-        }}
-      >
-        This Home page is under construction
-      </Typography>
-    </Box>
-  );
-}
+export default Home;
