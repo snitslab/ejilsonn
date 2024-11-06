@@ -7,22 +7,30 @@ import Policy from "./Policy";
 import { Route, Routes } from "react-router-dom";
 import Counter from "./Counter";
 import ProductDetails from "./ProductDetails";
+import ShoppingCategories from "./ShoppingCategories";
 
-function Layout(){
-    return(
+function Layout() {
+    return (
         <div>
-            <Header/>
+            <Header />
             <Container maxWidth={'xxl'}>
                 <Routes>
-                    <Route path="/home" element={<Home/>}></Route>
-                    <Route path="/soc" element={<Soc/>}></Route>
-                    <Route path="/policy" element={<Policy/>}></Route>
-                    <Route path="/Counter" element={<Counter/>}></Route>
-                    <Route path="/ProductDetails" element={<ProductDetails/>}></Route>
-                    
+                    <Route path="/home" element={<Home />}>
+                        <Route path="ShoppingCategories" element={<ShoppingCategories/>}>
+                        </Route>
+                    </Route>
+
+                    <Route path="/soc" element={<Soc />}></Route>
+
+                    <Route path="/policy" element={<Policy />}></Route>
+
+                    <Route path="/Counter" element={<Counter />}></Route>
+
+                    <Route path="/ProductDetails" element={<ProductDetails />}></Route>
+
                 </Routes>
             </Container>
-            <Footer/>
+            <Footer />
         </div>
     )
 }
