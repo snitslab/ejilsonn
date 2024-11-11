@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Button, TextField, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 
 export default function Counter() {
-  const [count, setCount] = useState(0);
+  const [cartCount, setCount] = useState(0);
   const [loading, setLoading] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
   const [setIsNavigating] = useState(false);
@@ -84,7 +84,7 @@ export default function Counter() {
       {/* Display Count with Spinner */}
       <Box sx={{ position: 'relative' }}>
         <TextField
-          value={count}
+          value={cartCount}
           onChange={handleInputChange}
           variant="outlined"
           inputProps={{ min: 0, style: { textAlign: 'center', padding: '3px' } }}
