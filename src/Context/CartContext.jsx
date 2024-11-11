@@ -1,28 +1,19 @@
-// CartContext.jsx
-import React, { createContext, useState, useContext } from 'react';
+// src/Context/CartContext.js
+import React, { createContext, useState } from 'react';
 
-// Create the CartContext
-const CartContext = createContext();
+// Create context
+export const CartContext = createContext();
 
-// Create a provider component
+// Create provider component
 export const CartProvider = ({ children }) => {
-  const [cartCount, setCartCount] = useState(0);
+    const [cartCount, setCartCount] = useState(0);
 
-  // Function to add item to cart, increments the cart count
-  {/*const addToCart = () => {
-    setCartCount(prevCount => prevCount + 1);
-  };
-  if you enable this change the below line <CartContext.Provider value={{ cartCount, addToCart }}>
-*/}
+    const incrementCartCount = () => setCartCount((prevCount) => prevCount + 1);
+    const decrementCartCount = () => setCartCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
 
-  return (
-    <CartContext.Provider value={{cartCount}}> 
-      {children}
-    </CartContext.Provider>
-  );
+    return (
+        <CartContext.Provider value={{ cartCount, incrementCartCount, decrementCartCount }}>
+            {children}
+        </CartContext.Provider>
+    );
 };
-
-// Custom hook to use the CartContext
-// export const useCart = () => {
-//   return useContext(CartContext);
-// };

@@ -1,8 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
 import Layout from './pages/Layout';
-import { CartProvider, CartContext, cartCount} from './Context/CartContext';
-import { useContext } from 'react';
+import { CartProvider} from './Context/CartContext';
 
 function App() {
 

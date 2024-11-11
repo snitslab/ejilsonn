@@ -1,18 +1,13 @@
-// import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import PersonIcon from '@mui/icons-material/Person';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import React from 'react';
-
+import { CartContext } from '../Context/CartContext';
+import { IconButton, Badge, Box, AppBar, Toolbar, Typography } from '@mui/material';
+import { useContext } from 'react';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -24,8 +19,22 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   }));
 
 export default function Header() {
-    const [cartCount, setCartCount]=React.useState(0);
+    // const [cartCount, setCartCount]=React.useState(0);
 
+    const { cartCount } = useContext(CartContext);
+
+    return (
+        <AppBar position="static" color="transparent">
+            <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Typography variant="h6">App 3.0</Typography>
+                <IconButton size="large" color="inherit">
+                    <Badge badgeContent={cartCount} color="secondary">
+                        <ShoppingCartIcon />
+                    </Badge>
+                </IconButton>
+            </Toolbar>
+        </AppBar>
+    );
 
 
     return (
