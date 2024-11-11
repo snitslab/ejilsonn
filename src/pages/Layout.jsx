@@ -8,8 +8,13 @@ import { Route, Routes } from "react-router-dom";
 import Counter from "./Counter";
 import ProductDetails from "./ProductDetails";
 import ShoppingCategories from "./ShoppingCategories";
+import { CartContext } from '../Context/CartContext';
+import React, { useContext } from 'react';
 
 function Layout() {
+
+    const {Count} = useContext(CartContext)
+
     return (
         <div>
             <Header />

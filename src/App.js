@@ -1,11 +1,15 @@
 //import logo from './logo.svg';
 import './App.css';
 import Layout from './pages/Layout';
+import { CartProvider} from './Context/CartContext';
 
 function App() {
+
   return (
     <div className="App">
-      <Layout/> 
+      <CartProvider>
+        <Layout />
+      </CartProvider>
     </div>
   );
 }
