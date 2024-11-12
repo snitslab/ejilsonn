@@ -98,18 +98,7 @@ export default function Counter() {
                         },
                     }}
                 />
-                {loading && (
-                    <CircularProgress
-                        size={40}
-                        sx={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                            marginTop: '-20px',
-                            marginLeft: '-20px',
-                        }}
-                    />
-                )}
+
             </Box>
 
             {/* Increment Button */}
